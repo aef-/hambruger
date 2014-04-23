@@ -26,33 +26,22 @@ Transformer.prototype.run = function( ) {
  * @param {object} block.code Esprima AST
  */
 Transformer.prototype.runOne = function( block ) {
-  if( this.isConstructor( block ) )
-    return this.constructor( block );
-  else if( this.isMethod( block ) )
+  if( this.isMethod( block ) )
     return this.method( block );
   else if( this.isVariable( block ) ) {
     return this.variable( block );
   }
 };
 
-Transformer.prototype.constructor = function( block ) {
-  var header = md.toH2( this.getSignature( block ) ),
-      description = this.getDescription( block ),
-      params = this.params( block ),
-      ret = header;
-
-  if( description )
-    ret += md.newLine( ) + md.newLine( ) + description;
-  if( params )
-    ret += md.newLine( ) + md.newLine( ) + params;
-  return ret;
-};
-
 Transformer.prototype.method = function( block ) {
-  var header = md.toH3( this.getSignature( block ) ),
-      description = this.getDescription( block ),
+  var description = this.getDescription( block ),
       params = this.params( block ),
-      ret = header;
+      ret = "";
+
+  if( this.isConstructor( block ) )
+    ret += md.toH2( this.getSignature( block ) );
+  else
+    ret += md.toH3( this.getSignature( block ) );
 
   if( description )
     ret += md.newLine( ) + md.newLine( ) + description;
