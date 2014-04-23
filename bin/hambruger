@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var concat = require( 'concat-stream' ),
     Hambruger = require( './hambruger' ),
     Readable = require( 'stream' ).Readable,

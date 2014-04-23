@@ -15,6 +15,9 @@
   "bugs": {
     "url": "https://github.com/aef-/hambruger/issues"
   },
+  "bin": {
+    "hambruger": "./bin/hambruger",
+  },
   "homepage": "https://github.com/aef-/hambruger",
   "dependencies": {
     "doctrine": "~0.5.0",
@@ -22,5 +25,8 @@
     "esprima": "~1.1.1",
     "lodash": "~2.4.1"
   },
-  "private": "true"
+  "private": "true",
+  "devDependencies": {
+    "mocha": "~1.18.2"
+  }
 }

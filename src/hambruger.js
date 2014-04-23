@@ -5,7 +5,10 @@ var _ = require( 'lodash' ),
 
 /**
  * @param {string} raw Data to be parsed for JSDOC comments.
- * @param {object} options See doctrine documentation.
+ * @param {object} options
+ * @param {boolean} onlyPublic Only include explicit `@public` code.
+ * @param {boolean} excludePrivate Exclude all `@private` code.
+ * @param {boolean} includeCode Include code that's being documented.
  * @constructor
  * @public
  */
