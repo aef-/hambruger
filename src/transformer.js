@@ -11,12 +11,12 @@ var _   = require( 'lodash' ),
 function Transformer( blocks ) {
   this.blocks = blocks;
 
-  this.classes = { };
-  this.run( );
+  this.classes = { 
+  };
 }
 
 Transformer.prototype.run = function( ) {
-  _.each( this.blocks, this.runOne, this );
+  return _.map( this.blocks, this.runOne, this ).join( md.newLine( ) + md.newLine( ) );
 };
 
 /**
@@ -27,30 +27,39 @@ Transformer.prototype.run = function( ) {
  */
 Transformer.prototype.runOne = function( block ) {
   if( this.isConstructor( block ) )
-    console.info( this.constructor( block ) );
+    return this.constructor( block );
   else if( this.isMethod( block ) )
-    console.info( this.method( block ) );
+    return this.method( block );
   else if( this.isVariable( block ) ) {
-    this.variable( block );
+    return this.variable( block );
   }
 };
 
 Transformer.prototype.constructor = function( block ) {
- return  md.toH2( this.getSignature( block ) ) +
-         md.newLine( ) +
-         md.newLine( ) +
-         this.getDescription( block ) +
-         md.newLine( ) +
-         this.params( block );
+  var header = md.toH2( this.getSignature( block ) ),
+      description = this.getDescription( block ),
+      params = this.params( block ),
+      ret = header;
+
+  if( description )
+    ret += md.newLine( ) + md.newLine( ) + description;
+  if( params )
+    ret += md.newLine( ) + md.newLine( ) + params;
+  return ret;
 };
 
 Transformer.prototype.method = function( block ) {
-  return md.toH3( this.getSignature( block ) ) +
-         md.newLine( ) +
-         md.newLine( ) +
-         this.getDescription( block ) +
-         md.newLine( ) +
-         this.params( block );
+  var header = md.toH3( this.getSignature( block ) ),
+      description = this.getDescription( block ),
+      params = this.params( block ),
+      ret = header;
+
+  if( description )
+    ret += md.newLine( ) + md.newLine( ) + description;
+  if( params )
+    ret += md.newLine( ) + md.newLine( ) + params;
+
+  return ret;
 };
 
 Transformer.prototype.params = function( block ) {

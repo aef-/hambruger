@@ -4,8 +4,8 @@ var _ = require( 'lodash' ),
     Transformer = require( './transformer' );
 
 /**
- * @param raw {string} Data to be parsed for JSDOC comments.
- * @param options {object} See doctrine documentation.
+ * @param {string} raw Data to be parsed for JSDOC comments.
+ * @param {object} options See doctrine documentation.
  * @constructor
  * @public
  */
@@ -19,7 +19,6 @@ function Hambruger( raw, options ) {
   this._data= [ ];
 
   this.init( );
-  new Transformer( this._data );
 }
 
 /**
@@ -43,9 +42,8 @@ Hambruger.prototype.init = function( ) {
  * @public
  */
 Hambruger.prototype.toMarkdown = function( ) {
-  _.each( this._data, function( d ) {
-
-  }, this );
+  var t = new Transformer( this._data );
+  return t.run( );
 };
 
 module.exports = Hambruger;
