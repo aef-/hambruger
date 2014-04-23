@@ -1,4 +1,4 @@
 hambruger
-=========
+=====
 
-HAMBRUGER HUNGRY
+Converts JSDOC3 into Markdown for Flatdoc input.

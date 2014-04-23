@@ -1,0 +1,26 @@
+{
+  "name": "Hambruger",
+  "version": "0.0.0",
+  "description": "Converts JSDOC3 into Markdown for Flatdoc input.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/aef-/hambruger.git"
+  },
+  "author": "aef-",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aef-/hambruger/issues"
+  },
+  "homepage": "https://github.com/aef-/hambruger",
+  "dependencies": {
+    "doctrine": "~0.5.0",
+    "concat-stream": "~1.4.5",
+    "esprima": "~1.1.1",
+    "lodash": "~2.4.1"
+  },
+  "private": "true"
+}
