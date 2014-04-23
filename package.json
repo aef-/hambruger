@@ -16,7 +16,7 @@
     "url": "https://github.com/aef-/hambruger/issues"
   },
   "bin": {
-    "hambruger": "./bin/hambruger",
+    "hambruger": "./bin/hambruger"
   },
   "homepage": "https://github.com/aef-/hambruger",
   "dependencies": {
