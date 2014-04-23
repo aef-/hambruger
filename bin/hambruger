@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 var concat = require( 'concat-stream' ),
-    Hambruger = require( './hambruger' ),
+    Hambruger = require( '../src/hambruger' ),
     Readable = require( 'stream' ).Readable,
     args = process.argv.slice( 2 );
 
