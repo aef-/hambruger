@@ -10,10 +10,10 @@ describe( 'Hambruger', function( ) {
   var fixtures = { };
 
   before( function( done ) {
-    var files = [ './code/page.js',
-                  './markdown/default.md',
-                  './markdown/private.md',
-                  './markdown/public.md'
+    var files = [ './tests/code/page.js',
+                  './tests/markdown/default.md',
+                  './tests/markdown/private.md',
+                  './tests/markdown/public.md'
                 ];
     async.parallel(
      _.map( files, function( filename ) {
