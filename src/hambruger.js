@@ -6,22 +6,24 @@ var _ = require( 'lodash' ),
 /**
  * @param {string} raw Data to be parsed for JSDOC comments.
  * @param {object} options
- * @param {boolean} onlyPublic Only include explicit `@public` code.
- * @param {boolean} excludePrivate Exclude all `@private` code.
- * @param {boolean} includeCode Include code that's being documented.
+ * @param {boolean} options.onlyPublic Only include explicit `@public` code.
+ * @param {boolean} options.excludePrivate Exclude all `@private` code.
+ * @param {boolean} options.includeCode Include code that's being documented.
  * @constructor
  * @public
  */
 function Hambruger( raw, options ) {
+  this.options = options || { };
   this._raw = raw;
   this._ast = esprima.parse( raw, { raw: true, loc: true, tolerant: true, comment: true } );
 
   //An array of objects
   //obj.comment {{doctrine}}
   //obj.code {{esprima}}
-  this._data= [ ];
+  this._data = [ ];
 
   this.init( );
+  this.Transformer = new Transformer( this._data, this.options );
 }
 
 /**
@@ -45,8 +47,7 @@ Hambruger.prototype.init = function( ) {
  * @public
  */
 Hambruger.prototype.toMarkdown = function( ) {
-  var t = new Transformer( this._data );
-  return t.run( );
+  return this.Transformer.outputMarkdown( );
 };
 
 module.exports = Hambruger;
