@@ -143,9 +143,12 @@ Transformer.prototype.getFunctionBlock = function( block ) {
     functionBlock = block.code.expression.right;
 
   //var method = function( )
-  if( block.code.type === 'VariableDeclaration' )
-    functionBlock = !!_.find( block.code.declarations, function( dec ) { 
+  if( block.code.type === 'VariableDeclaration' ) {
+    functionBlock = _.find( block.code.declarations, function( dec ) { 
       return dec.init.type === 'FunctionExpression'; } );
+    if( functionBlock )
+      functionBlock = functionBlock.init;
+  }
 
   return functionBlock;
 };

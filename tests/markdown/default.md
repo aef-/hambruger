@@ -1,4 +1,4 @@
-## Page()
+## Page(opts)
 
 * `opts`
 * `opts.url`
