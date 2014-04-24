@@ -5,7 +5,7 @@ Converts JSDOC3 into Markdown to be thrown up on your Github README/Wiki or [Fla
 
 ## Notice
 
-As of now this project is experimental. The only goal is to provide an easily generated documented API to be shown in your README.md from JSDOC. This means it's not as smart as it could be and expects certain things such as your block comments to be followed by the object it's documenting and does not differ between a class property and a file encompassed property. Please raise an issue and let me know the direction this thing should take. Thanks.
+As of now this project is experimental. The only goal is to provide an easily generated documented API to be shown in your README.md from JSDOC. This means it's not as smart as it could be and expects certain things such as your block comments to be followed by the object it's documenting and it does not differ between a class property and a file encompassed property. Please raise an issue and let me know the direction this thing should take. Thanks.
 
 ## Usage
 ```
