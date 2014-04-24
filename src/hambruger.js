@@ -4,7 +4,7 @@ var _ = require( 'lodash' ),
     Transformer = require( './transformer' );
 
 /**
- * @param {string} raw Data to be parsed for JSDOC comments.
+ * @param {string} raw Code to be parsed for JSDOC comments.
  * @param {object} options
  * @param {boolean} options.onlyPublic Only include explicit `@public` code.
  * @param {boolean} options.excludePrivate Exclude all `@private` code.
