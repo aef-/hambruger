@@ -1,3 +1,5 @@
+![brugerking](https://raw.githubusercontent.com/aef-/hambruger/develop/media/brugerking.png)
+
 hambruger
 =====
 
