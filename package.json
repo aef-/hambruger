@@ -1,5 +1,5 @@
 {
-  "name": "Hambruger",
+  "name": "hambruger",
   "version": "0.0.1",
   "description": "Converts JSDOC3 into Markdown to be thrown up on your Github README/Wiki or Flatdoc.",
   "main": "index.js",
